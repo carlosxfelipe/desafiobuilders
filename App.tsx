@@ -6,7 +6,7 @@ import Weather from './src/screens/Weather';
 const App = () => {
   return (
     <>
-      <StatusBar backgroundColor="#FFFFFF" barStyle="dark-content" />
+      <StatusBar backgroundColor="#ffcc00" barStyle="dark-content" />
       <Weather />
     </>
   );
