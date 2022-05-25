@@ -6,15 +6,57 @@ export const Container = styled.View`
 `;
 
 export const Header = styled.View`
-  width: 100%;
-  height: 12%;
   align-items: center;
-  justify-content: flex-end;
-  padding-bottom: 19px;
+  justify-content: center;
+  background-color: whitesmoke;
+  padding-top: 16px;
+  padding-bottom: 16px;
+`;
+
+export const Content = styled.View`
+  flex: 1;
+`;
+
+interface MaxAndMinProps {
+  color: string;
+}
+
+export const MaxAndMin = styled.Text<MaxAndMinProps>`
+  align-items: center;
+  color: ${({color}) => color || 'black'};
+  font-size: 24px;
+`;
+
+export const CityInfo = styled.Text`
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 50px;
+  text-align: center;
 `;
 
 export const Title = styled.Text`
-  color: black;
-  /* font-family: 'Ubuntu-Medium'; */
+  color: #000000;
   font-size: 24px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const SmallText = styled.Text`
+  color: #000000;
+  font-size: 14px;
+  text-align: center;
+`;
+
+export const BigText = styled.Text`
+  color: #000000;
+  font-size: 72px;
+  text-align: center;
+`;
+
+export const RowContent = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
 `;
