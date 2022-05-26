@@ -4,8 +4,12 @@ interface MaxAndMinProps {
   color: string;
 }
 
+interface ContentProps {
+  isDayTime: boolean;
+}
+
 export const Container = styled.View`
-  background-color: white;
+  background-color: whitesmoke;
   flex: 1;
 `;
 
@@ -15,8 +19,6 @@ export const Header = styled.View`
   background-color: #ffcc00;
   padding-top: 16px;
   padding-bottom: 16px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
 `;
 
 export const Title = styled.Text`
@@ -27,8 +29,12 @@ export const Title = styled.Text`
   font-weight: bold;
 `;
 
-export const Content = styled.View`
+export const Content = styled.View<ContentProps>`
   flex: 1;
+  margin: 20px;
+  background-color: ${({isDayTime}) =>
+    isDayTime ? 'rgba(255, 255, 255, 0.8)' : 'rgba(0, 0, 0, 0.8)'};
+  border-radius: 10px;
 `;
 
 export const MaxAndMin = styled.Text<MaxAndMinProps>`
@@ -37,22 +43,22 @@ export const MaxAndMin = styled.Text<MaxAndMinProps>`
   font-size: 24px;
 `;
 
-export const CityInfo = styled.Text`
-  color: black;
+export const CityInfo = styled.Text<ContentProps>`
+  color: ${({isDayTime}) => (isDayTime ? 'black' : 'white')};
   font-size: 24px;
   font-weight: bold;
   margin-top: 50px;
   text-align: center;
 `;
 
-export const SmallText = styled.Text`
-  color: #000000;
+export const SmallText = styled.Text<ContentProps>`
+  color: ${({isDayTime}) => (isDayTime ? 'black' : 'white')};
   font-size: 14px;
   text-align: center;
 `;
 
-export const BigText = styled.Text`
-  color: #000000;
+export const BigText = styled.Text<ContentProps>`
+  color: ${({isDayTime}) => (isDayTime ? 'black' : 'white')};
   font-size: 72px;
   text-align: center;
 `;
